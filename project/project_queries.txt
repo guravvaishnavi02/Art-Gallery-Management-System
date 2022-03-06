@@ -1,0 +1,179 @@
+Create database sample;
+*******************************
+Use sample;
+*******************************
+create table Exhibitions(
+    EName varchar(30),
+    Start_Date date,
+    End_Date date,
+    Place varchar(10)
+);
+insert into Exhibitions(EName,Start_Date,End_Date,Place) 
+values('Canvas','2017-01-16','2017-01-24','Mumbai'),
+('Chromism','2019-03-06','2019-03-12','Banglore'),
+('Vibgyor & Beyond','2018-06-26','2018-07-02','Indore'),
+('Spectrum','2019-08-10','2019-08-15','Delhi'),
+("Portrait's World",'2020-06-26','2020-06-30','Kolkata'),
+('Strokes & Brushes','2020-01-01','2020-01-06','Hyderabad'),
+('Words & Pictures','2019-03-27','2019-04-04','Gujarat'),
+('Mumbai Art Fair','2018-01-28','2018-02-06','Mumbai'),
+('Drishyakala','2017-12-06','2017-12-12','Pune'),
+('Palette','2021-04-12','2021-04-18','Chennai');
+
+****************************************************************************************************************************
+create table Artist(
+    AName varchar(20),
+    Is_Alive varchar(10),
+    AMobile varchar(10)
+);
+insert into Artist(AName,Is_Alive,AMobile)
+values('Swati Pasari','Yes',6678124597),
+('Aarti Sunder','Yes',8193426501),
+('Srimati Lal','No',9245678234),
+('Sujith SN','Yes',4856712191),
+('Madhu Das','Yes',2891837401),
+('Manjit Bawa','No',9876432167),
+('Bholekar Srihari','No',8292775642),
+('Parag Sonarghare','Yes',5673829145),
+('Satish Gujral','No',7364524319),
+('Sachin Sebastian','Yes',9922776543);
+****************************************************************************************************************************
+create table All_Galleries(
+    GName varchar(25),
+    GMobile varchar(10)
+);
+insert into All_Galleries(GName,GMobile)
+values('Volte',3647282891),
+('Sublime Galleria',7373856742),
+('Canarys Art Gallery',9238765432),
+('Nature Morte',1876542378),
+('Aakriti Art Gallery',9834567298),
+('Muse Art Gallery',1346827645),
+('Baroda Picture Gallery',9346537896),
+('Chemould Road Gallery',9827934629),
+('Darpan Art Gallery',4892947526),
+('FarawayTree Gallery',8734918746);
+****************************************************************************************************************************
+create table Art_Piece(
+    Art_ID int,
+    Art_Type varchar(20),
+    Price int,
+    A_Status varchar(10),
+    Created_On date,
+    AName varchar(20)
+);
+insert into Art_Piece(Art_ID,Art_Type,Price,A_Status,Created_On,AName)
+values(1401,'Impressionism Art',5000,'Sold', '2016-12-02','Swati Pasari'),
+(1402,'Abstract Art',4000,'Sold','2019-01-14','Aarti Sunder'),
+(1403,'Contemporary Art',2000,'Not Sold','2018-04-16','Srimati Lal'),
+(1404,'Modern Art',3000,'Sold','2019-01-06','Sujith SN'),
+(1405,'Portrait',1000,'Not Sold', '2020-02-26','Madhu Das'),
+(1406,'Painting',6000,'Sold', '2019-12-20','Manjit Bawa'),
+(1407,'Calligraphy',3000,'Not Sold','2019-01-01','Bholekar Srihari'),
+(1408,'Graffiti Art',2000,'Not Sold','2017-12-20','Parag Sonarghare'),
+(1409,'Surrealism Art',4000,'Sold','2017-03-27','Satish Gujral'),
+(1410,'Fantasy Art',3000,'Sold','2020-12-12','Sachin Sebastian');
+
+****************************************************************************************************************************
+
+create table Showcases(
+    Art_ID int,
+    EName varchar(30) 
+);
+insert into Showcases(Art_ID,EName)
+values(1401,'Canvas'),
+(1402,'Chromism'),
+(1403,'Vibgyor & Beyond'),
+(1404,'Spectrum'),
+(1405,"Portrait's World"),
+(1406,'Strokes & Brushes'),
+(1407,'Words & Pictures'),
+(1408,'Mumbai Art Fair'),
+(1409,'Drishyakala'),
+(1410,'Palette');
+****************************************************************************************************************************
+create table Organizers(
+    EName varchar(20),
+    GName varchar(25) 
+);
+insert into Organizers(EName,GName)
+values('Canvas','Volte'),
+('Chromism','Sublime Galleria'),
+('Vibgyor & Beyond','Canarys Art Gallery'),
+('Spectrum','Nature Morte'),
+("Portrait's World",'Aakriti Art Gallery'),
+('Strokes & Brushes','Muse Art Gallery'),
+('Words & Pictures','Baroda Picture Gallery'),
+('Mumbai Art Fair','Chemould Road Gallery'),
+('Drishyakala','Darpan Art Gallery'),
+('Palette','FarawayTree Gallery');
+****************************************************************************************************************************
+create table Holdings(
+    Art_ID int,
+    GName varchar(25),
+    Since date
+);
+insert into Holdings(Art_ID,GName,Since)
+values(1401,'Volte','2017-01-01'),
+(1402,'Sublime Galleria','2019-01-28'),
+(1403,'Canarys Art Gallery','2018-05-01'),
+(1404,'Nature Morte','2019-02-01'),
+(1405,'Aakriti Art Gallery','2020-03-06'),
+(1406,'Muse Art Gallery','2020-01-08'),
+(1407,'Baroda Picture Gallery','2019-02-24'),
+(1408,'Chemould Road Gallery','2018-01-20'),
+(1409,'Darpan Art Gallery','2017-04-12'),
+(1410,'FarawayTree Gallery','2021-01-30');
+****************************************************************************************************************************
+create table Purchase(
+    Art_ID int,
+    PName varchar(20),
+    Transaction_ID int,
+    Price int,
+    Purchased_On date
+
+);
+insert into Purchase(Art_ID,PName,Transaction_ID,Price,Purchased_On)
+values(1401,'Arya Ambekar',65748,50000,'2017-01-25'),
+(1402,'Prasad Desai',83647,64000,'2019-03-13'),
+(1404,'Mughda Patil',24152,73000,'2019-08-16'),
+(1406,'Prathamesh Dhamak',20964,56000,'2020-01-07'),
+(1409,'Anaya Sawant',97264,94000,'2018-01-01'),
+(1410,'Samaira Kulkarni',76232,83000,'2021-04-19');
+****************************************************************************************************************************
+create table Insurance(
+    Art_ID int,
+    Start_Date date,
+    End_Date date,
+    Premium int,
+    ICName varchar(10)
+);
+insert into Insurance(Art_ID,Start_Date,End_Date,Premium,ICName)
+values(1403,'2021-01-01','2022-01-01',4000,'HDFC Ergo'),
+(1405,'2021-03-27','2022-03-27',6000,'Reliance'),
+(1407,'2021-02-16','2022-02-16',5000,'IFFCOTokio'),
+(1408,'2021-02-20','2022-02-20',4000,'TATA AIG');
+****************************************************************************************************************************
+create table Purchasers(
+    PName varchar(20),
+    PMobile varchar(10)
+);
+insert into Purchasers(PName,PMobile)
+values('Arya Ambekar',9826534123),
+('Prathamesh Desai',8374625319),
+('Mughda Patil',9187653829),
+('Rohit Raut',8268692013),
+('Anaya Sawant',9103452758),
+('Samaira Kulkarni',3716845289);
+****************************************************************************************************************************
+create table Insurance_Company(
+    ICName varchar(20),
+    ICMobile varchar(10)
+);
+insert into Insurance_Company(ICName,ICMobile)
+values('HDFC Ergo',4673829456),
+('Future Generali',4653789265),
+('TATA AIG',2283674518),
+('Reliance',8337624829),
+('IFFCOTokio',7736489925);
+****************************************************************************************************************************

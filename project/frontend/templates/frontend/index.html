@@ -1,0 +1,202 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Art Gallery</title>
+  <scripts></scripts>
+  <script src="{% static 'frontend/index.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+
+  <style>
+    #customers {
+      font-family: 'Courgette', cursive;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #customers td,
+    #customers th {
+      border: 1px solid #FEFBF3;
+      padding: 8px;
+    }
+
+    #customers tr:nth-child(even) {
+      background-color: #FFEDD3;
+    }
+
+    #customers tr:hover {
+      background-color: #FFEDD3;
+    }
+
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #fa7979;
+      color: black;
+    }
+
+    body {
+      background: linear-gradient(120deg, #f3e9db, #fac4c4, #ffa6a6);
+    }
+
+    .stars {
+      background-color: white;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      animation-iteration-count: infinite;
+    }
+
+    .star-1 {
+      margin-top: -64%;
+      margin-left: 22%;
+      animation-name: twinkle-1;
+      animation-duration: 1s;
+    }
+
+    .star-2 {
+      margin-top: -12%;
+      margin-left: 38%;
+      animation-name: twinkle-2;
+      animation-duration: 1s;
+    }
+
+    .star-3 {
+      margin-top: -4%;
+      margin-left: 58%;
+      animation-name: twinkle-3;
+      animation-duration: 1s;
+    }
+
+    .star-4 {
+      margin-top: 0%;
+      margin-left: 78%;
+      animation-name: twinkle-4;
+      animation-duration: 1s;
+    }
+
+    .star-5 {
+      margin-top: 8%;
+      margin-left: 94%;
+      animation-name: twinkle-5;
+      animation-duration: 1s;
+    }
+
+    @keyframes twinkle-1 {
+      50% {
+        transform: scale(0.5);
+        opacity: 0.5;
+      }
+    }
+
+    @keyframes twinkle-2 {
+      20% {
+        transform: scale(0.5);
+        opacity: 0.5;
+      }
+    }
+
+    @keyframes twinkle-3 {
+      50% {
+        transform: scale(0.5);
+        opacity: 0.5;
+      }
+    }
+
+    @keyframes twinkle-4 {
+      20% {
+        transform: scale(0.5);
+        opacity: 0.5;
+      }
+    }
+
+    @keyframes twinkle-5 {
+      50% {
+        transform: scale(0.5);
+        opacity: 0.5;
+      }
+    }
+
+    .content {
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Cookie', cursive;
+      padding-top: 76px;
+      font-size: 80px;
+    }
+
+    p {
+      font-size: 25px;
+    }
+
+    div ul {
+      font-family: 'Cookie', cursive;
+      font-size: 40px;
+      list-style: none;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <div class="topnav" id="myTopnav">
+    <a href='#admin'>Admin Logged In</a>
+    <a href="/contact">Contact</a>
+    <a href="/about">About</a>
+    <a href="/home" class="active">Art Gallery</a>
+
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <!-- The sidebar -->
+  <div class="sidebar">
+    <a class="active" href="/home">Home</a>
+    <a href="/articles">Articles</a>
+    <a href="/artists">Artists</a>
+    <a href="/galleries">Galleries</a>
+    <a href="/holdings">Holdings by Galleries</a>
+    <a href="/purchasers">Purchasers</a>
+    <a href="/purchases">Purchases</a>
+    <a href="/insurances">Insurances</a>
+    <a href="/insurance_companies">Insurance Companies</a>
+    <a href="/exhibitions">Exhibitions</a>
+    <a href="/organizers">Organizers</a>
+    <a href="/showcases">Showcases</a>
+
+  </div>
+
+  <!-- Page content -->
+  <div class="content">
+    <br><br>
+    <h1>Dizzle Art Gallery</h1>
+    <ul>
+      <li>Art is a way of survival.</li>
+      <li>Art is not what you see but what you make others see.</li>
+      <li>Art speaks where words are unable to explain</li>
+    </ul>
+  </div>
+
+  <div class="star-1 stars"></div>
+  <div class="star-2 stars"></div>
+  <div class="star-3 stars"></div>
+  <div class="star-4 stars"></div>
+  <div class="star-5 stars"></div>
+</body>
+
+</html>

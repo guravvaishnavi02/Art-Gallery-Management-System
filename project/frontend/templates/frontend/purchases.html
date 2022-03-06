@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Art Gallery</title>
+  <scripts></scripts>
+  <script src="{% static 'frontend/index.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
+  <style>
+    #customers {
+      font-family: 'Courgette', cursive;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #customers td,
+    #customers th {
+      border: 1px solid #FEFBF3;
+      padding: 8px;
+    }
+
+    #customers tr:nth-child(even) {
+      background-color: #FEFBF3;
+    }
+
+    #customers tr:hover {
+      background-color: #FEFBF3;
+    }
+
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #fa7979;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <div class="topnav" id="myTopnav">
+    <a href='#admin'>Admin Logged In</a>
+    <a href="/contact">Contact</a>
+    <a href="/about">About</a>
+    <a href="/home" class="active">Art Gallery</a>
+
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <!-- The sidebar -->
+  <div class="sidebar">
+    <a href="/home">Home</a>
+    <a href="/articles">Articles</a>
+    <a href="/artists">Artists</a>
+    <a href="/galleries">Galleries</a>
+    <a href="/holdings">Holdings by Galleries</a>
+    <a href="/purchasers">Purchasers</a>
+    <a class="active" href="/purchases">Purchases</a>
+    <a href="/insurances">Insurances</a>
+    <a href="/insurance_companies">Insurance Companies</a>
+    <a href="/exhibitions">Exhibitions</a>
+    <a href="/organizers">Organizers</a>
+    <a href="/showcases">Showcases</a>
+
+  </div>
+
+  <!-- Page content -->
+  <div class="content">
+    <br><br>
+    <h2> All Purchases by Purchasers </h2>
+    <div>
+      <table id='customers'>
+        <tr>
+          <th> Article ID </th>
+          <th> Purchaser's Name </th>
+          <th> Transaction ID </th>
+          <th> Price </th>
+          <th> Purchased On </th>
+        </tr>
+        {% for x in table %}
+        <tr>
+          {% for y in x %}
+          <td> {{ y }} </td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <br><br>
+
+    <div class="color">
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>Select Operation:
+          <select name="operationid" id="operationid" required="required">
+            <option value='insert'>Insert</option>
+            <option value='delete'>Delete</option>
+            <option value='update'>Update</option>
+          </select>
+        </p>
+        <p>Article ID:
+          <input type="text" name="aid" id="aid" required="required">
+        </p>
+        <p>Purchaser Name:
+          <input type="text" name="pname" id="pname" required="required">
+        </p>
+        <p>Transaction ID:
+          <input type="text" name="tid" id="tid" required="required">
+        </p>
+        <p>Price:
+          <input type="text" name="price" id="price" required="required">
+        </p>
+        <p>Purchased On:
+          <input type="date" name="puron" id="puron" required="required">
+        </p>
+        <button id="submit" class="btn-primary">OK</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

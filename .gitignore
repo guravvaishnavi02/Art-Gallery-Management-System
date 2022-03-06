@@ -1,0 +1,4 @@
+/env
+project/frontend/__pycache__
+project/frontend/migrations/__pycache__
+project/project/__pycache__

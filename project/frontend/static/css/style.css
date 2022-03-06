@@ -1,0 +1,103 @@
+/* Add a black background color to the top navigation */
+.topnav {
+    font-family: 'Courgette', cursive;
+    background-color: #ff5e5c;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    font-family: 'Courgette', cursive;
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    font-family: 'Courgette', cursive;
+    background-color: #FFEDD3;
+    color: black;
+  }
+  
+  /* Add an active class to highlight the current page */
+  .topnav a.active {
+    font-family: 'Courgette', cursive;
+    background-color: #FFEDD3;
+    color: black;
+  }
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+    display: none;
+  }
+
+  /* The side navigation menu */
+.sidebar {
+    font-family: 'Courgette', cursive;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    top: 50px;
+    overflow: auto;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    font-family: 'Courgette', cursive;
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    font-family: 'Courgette', cursive;
+    background-color: #fa7979;
+    color: black;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    font-family: 'Courgette', cursive;
+    background-color: #fa7979;
+    color: black;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    font-family: 'Courgette', cursive;
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  .btn-primary{
+    height: 34px;
+    width: 74px;
+    font-family: 'Courgette', cursive;
+    background-color: #fa7979;
+    padding: 7px;
+    border-color: #FFEDD3;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 10px;
+}
+  .btn-primary:hover{
+    background-color: #fde7c5;
+    border-color: #fa7979;
+}
+.color{
+  background: linear-gradient(120deg, #f3e9db, #fac4c4, #ffa6a6);
+  padding-left: 394px;
+}
